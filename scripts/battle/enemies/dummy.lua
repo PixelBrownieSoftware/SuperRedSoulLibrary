@@ -11,8 +11,8 @@ function Dummy:init()
     self.collider = Hitbox(self,0,0, 40,50)
 
     -- Enemy health
-    self.max_health = 450
-    self.health = 450
+    self.max_health = 50
+    self.health = 50
     -- Enemy attack (determines bullet damage)
     self.attack = 4
     -- Enemy defense (usually 0)

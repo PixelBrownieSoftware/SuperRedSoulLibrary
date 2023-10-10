@@ -3,6 +3,7 @@ local SuperRedSoul, super = Class(Soul)
 local sheildOn = false
 local canSheild = true
 local sheildTimer = 0.4
+local sheildDelay = 0.5
 
 function SuperRedSoul:init(x, y)
     super:init(self, x, y)
@@ -18,7 +19,7 @@ end
 function endSheild()
     sheildOn = false
     canSheild = false
-    Game.battle.timer:after(0.5, function() canSheild = true end)
+    Game.battle.timer:after(sheildDelay, function() canSheild = true end)
 end
 
 function SuperRedSoul:doMovement()

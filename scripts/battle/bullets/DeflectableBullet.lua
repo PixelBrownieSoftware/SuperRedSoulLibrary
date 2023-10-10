@@ -6,7 +6,7 @@ function DeflectableBullet:init(x, y, texture)
     self.damage = 15
 end
 
-function DeflectableBullet:onParry(heart)
+function DeflectableBullet:onCounter(heart)
     self.isDeflected = true
     Assets.playSound("impact")
     local part = createParticle(self.x, self.y)
@@ -46,7 +46,11 @@ function DeflectableBullet:update()
         for _,enemy in ipairs(enemies) do
             if self:collidesWith(enemy) then
                 -- [[TODO: damage = everyone's attack stat divided by 3 added together, for now we're just gonna return the damage of the bullet]]
-                local result, result_big = enemy:hurt(self.damage, false)
+                local dmg = self.damage
+                if enemy.health < self.damage then
+                    dmg = enemy.health - 1
+                end
+                local result, result_big = enemy:hurt(dmg, false)
                 Assets.playSound("damage")
                 self:remove()
             end

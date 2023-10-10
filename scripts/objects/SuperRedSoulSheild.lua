@@ -26,12 +26,12 @@ function SoulSheild:update()
     
     local bullets = Utils.filter(Game.stage:getObjects(DeflectBullet), function(v)
         if self.hit_bullets[v] then return false end
-        return v.onParry
+        return v.onCounter
     end)
     for _,bullet in ipairs(bullets) do
         if self:collidesWith(bullet) then
             self.hit_bullets[bullet] = true
-            local result, result_big = bullet:onParry(self, self.damage)
+            local result, result_big = bullet:onCounter(self, self.damage)
             
         end
     end
