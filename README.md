@@ -6,11 +6,11 @@ When you initiate the shield, as long as it is active, your soul stays in place,
 You can see it in action in this video: https://www.youtube.com/watch?v=DbsI_buUkCU
 
 ## SuperRedSoul
-`sheildTimer`: How long the shield will last. Default value is 0.4.
+`sheildTimer`: How long the shield will last. Default value is 0.4.\n
 `sheildDelay`: How long the cooldown period will last: Default value is 0.5.
 
 ## Enemybattler
-If you want the enemy to be affected by a deflected attack, add in a collider for them in the init() function.
+If you want the enemy to be affected by a deflected attack, add in a collider for them in the `init()` function.
 
 ## DeflectableBullet
 If you want to make a yellow/deflectable bullet, inherit this class. You can also change the way the bullet is deflected via overriding `onCounter(heart)`.
